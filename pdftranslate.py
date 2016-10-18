@@ -37,12 +37,12 @@ def translate(word):
     return l
      
 
-def main(filename):     
+def main(filename):
     print 'start process with', filename
     d = makedic(2000)
     txtname = filename[:-3] + 'txt'
     print 'start change PDF to txt.'
-    os.system('pdf2txt.py -o {0} {1}'.format(txtname, filename))
+    os.system('pdf2txt.py -o \"{0}\" \"{1}\"'.format(txtname, filename))
     f = open(txtname, 'r')
     c = f.read()
     f.close()
